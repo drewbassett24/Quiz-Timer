@@ -1,7 +1,7 @@
 const startbutton = document.getElementById("start-btn")
 const questionContainerElement = document.getElementById("question-container")
 const questionElement = document.getElementById("question")
-const answerbuttonsElement = document.getElementById("answer-buttons")
+const answerButtonsElement = document.getElementById("answer-buttons")
 
 let shuffledQuestions, currentQuestionIndex
 
@@ -44,8 +44,8 @@ const questions = [
     {
         question: "What is 1?",
         answers: [
-            { text: "1", correct: true },
-            { text: "2", correct: false },
+            { text: "a", correct: true },
+            { text: "b", correct: false },
             { text: "c", correct: false },
             { text: "d", correct: false },
 
