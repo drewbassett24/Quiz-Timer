@@ -30,6 +30,10 @@ body.wrong {
     --hue: var(--hue-wrong);
 }
 
+.timer-container{
+    background-color: 220, 100%, 70%;
+}
+
 .container {
     width: 800px;
     max-width: 50%;
