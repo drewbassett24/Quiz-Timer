@@ -3,9 +3,16 @@ const nextButton = document.getElementById("next-btn")
 const questionContainerElement = document.getElementById("question-container")
 const questionElement = document.getElementById("question")
 const answerButtonsElement = document.getElementById("answer-buttons")
+var Timer = setInterval (0)
 
 
 let shuffledQuestions, currentQuestionIndex, countDownTimer
+
+let currentQuestion = {}
+let score = 0
+let questionCounter = 0
+let availableQuestion = []
+
 
 startButton.addEventListener('click', startGame, countDownTimer)
 nextButton.addEventListener('click', () => {
@@ -15,7 +22,6 @@ nextButton.addEventListener('click', () => {
 })
 
 function startGame() {
-    //console.log('Started')
     startButton.classList.add('hide')
     shuffledQuestions = questions.sort(() => Math.floor(Math.random()))
     currentQuestionIndex = 0
@@ -24,10 +30,6 @@ function startGame() {
     countDownTimer()
     //call Timer here - Global variable Timer=setInterval () clear it with clearInterval
     //look at timing events on w3
-    
-}
-
-function timer(){
     var sec = 60;
     var countDownTimer = setInterval(function(){
         document.getElementById('countDownTimer').innerHTML='00:'+sec;
@@ -37,7 +39,20 @@ function timer(){
         
         }
     }, 1000);
+    
 }
+
+// function timer(){
+//     var sec = 60;
+//     var countDownTimer = setInterval(function(){
+//         document.getElementById('countDownTimer').innerHTML='00:'+sec;
+//         sec--;
+//         if (sec < 0) {
+//             clearInterval(timer);
+        
+//         }
+//     }, 1000);
+// }
 
 function setNextQuestion() {
     resetState()
