@@ -4,9 +4,10 @@ const questionContainerElement = document.getElementById("question-container")
 const questionElement = document.getElementById("question")
 const answerButtonsElement = document.getElementById("answer-buttons")
 
+
 let shuffledQuestions, currentQuestionIndex, countDownTimer
 
-startButton.addEventListener('click', startGame, timer)
+startButton.addEventListener('click', startGame, countDownTimer)
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion()
@@ -20,6 +21,7 @@ function startGame() {
     currentQuestionIndex = 0
     questionContainerElement.classList.remove("hide")
     setNextQuestion()
+    countDownTimer()
     //call Timer here - Global variable Timer=setInterval () clear it with clearInterval
     //look at timing events on w3
     
@@ -28,10 +30,11 @@ function startGame() {
 function timer(){
     var sec = 60;
     var countDownTimer = setInterval(function(){
-        document.getElementById('timerDisplay').innerHTML='00:'+sec;
+        document.getElementById('countDownTimer').innerHTML='00:'+sec;
         sec--;
         if (sec < 0) {
             clearInterval(timer);
+        
         }
     }, 1000);
 }
@@ -176,22 +179,22 @@ const questions = [
         ]
     },
     {
-        question: "Which ?",
+        question: "How many times of number does Javascript have?",
         answers: [
-            { text: "n", correct: true },
-            { text: "b", correct: false },
-            { text: "c", correct: false },
-            { text: "d", correct: false },
+            { text: "1", correct: true },
+            { text: "2", correct: false },
+            { text: "4", correct: false },
+            { text: "7", correct: false },
 
         ]
     },
     {
-        question: "What is 10?",
+        question: "What is an Array?",
         answers: [
-            { text: "a", correct: true },
-            { text: "b", correct: false },
-            { text: "c", correct: false },
-            { text: "d", correct: false },
+            { text: "A special kind of object", correct: false },
+            { text: "A set of numbers", correct: false },
+            { text: "A kind of variable that can hold more than one value at a time", correct: true },
+            { text: "A set of variables", correct: false },
 
         ]
     },
